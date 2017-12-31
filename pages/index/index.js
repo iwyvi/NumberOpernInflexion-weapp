@@ -1,54 +1,50 @@
 //index.js
-//获取应用实例
-const app = getApp()
+const inflexion = require("../../utils/inflexion.js");
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    toneMap: ["1 = C", "1 = #C", "1 = D", "1 = #D", "1 = E", "1 = F", "1 = #F", "1 = G", "1 = #G", "1 = A", "1 = #A", "1 = B"],
+    beforeMode: 0,
+    afterMode: 0,
+    beforeText: "",
+    afterText: ""
+
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.switchTab({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  bindBeforeTextInput(e) {
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      beforeText: e.detail.value
     })
+  },
+  bindBeforeModePickerChange(e) {
+    this.setData({
+      beforeMode: e.detail.value
+    })
+  },
+  bindAfterModePickerChange(e) {
+    this.setData({
+      afterMode: e.detail.value
+    })
+  },
+  bindAfterTextLongpress(e) {
+    wx.setClipboardData({
+      data: this.data.afterText,
+      success: function (res) {
+        wx.showToast({
+          title: '已复制到剪贴板',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+    })
+  },
+  convert(e) {
+    let transmode = this.data.beforeMode - this.data.afterMode;
+    let finalText = inflexion.change(this.data.beforeText, transmode);
+    this.setData({
+      afterText: finalText
+    })
+  },
+  onLoad() {
+
   }
 })

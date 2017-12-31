@@ -10,19 +10,5 @@
     "navigationBarBackgroundColor": "#ff5c4f",
     "navigationBarTitleText": "数字谱转调器",
     "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "selectedColor": "#ff5c4f",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "转调"
-      },
-      {
-        "pagePath": "pages/logs/logs",
-        "text": "曲谱"
-      }
-    ]
-  },
-  "debug": true
+  }
 }
