@@ -10,11 +10,6 @@ Page({
     afterText: ""
 
   },
-  bindBeforeTextInput(e) {
-    this.setData({
-      beforeText: e.detail.value
-    })
-  },
   bindBeforeModePickerChange(e) {
     this.setData({
       beforeMode: e.detail.value
@@ -25,24 +20,34 @@ Page({
       afterMode: e.detail.value
     })
   },
-  bindAfterTextLongpress(e) {
-    wx.setClipboardData({
-      data: this.data.afterText,
-      success: function (res) {
-        wx.showToast({
-          title: '已复制到剪贴板',
-          icon: 'success',
-          duration: 2000
-        })
-      },
-    })
-  },
   convert(e) {
     let transmode = this.data.beforeMode - this.data.afterMode;
-    let finalText = inflexion.change(this.data.beforeText, transmode);
+    let rawText = this.data.beforeText;
+    console.log(rawText)
+    if (!rawText) {
+      wx.showToast({
+        title: '请输入数字谱',
+        icon: 'failure',
+        duration: 2000
+      })
+      return;
+    } else {
+      let finalText = inflexion.change(rawText, transmode);
+      // this.setData({
+      //   afterText: finalText
+      // })
+      wx.setStorageSync("lastOpern", finalText);
+      wx.navigateTo({
+        url: "/pages/result/result"
+      })
+    }
+
+  },
+  formSubmit(e) {
     this.setData({
-      afterText: finalText
+      beforeText: e.detail.value.beforeText
     })
+    this.convert();
   },
   onLoad() {
 

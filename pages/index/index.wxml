@@ -1,28 +1,30 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="section section-opern">
-    <textarea class='textarea-opern' show-confirm-bar="false" placeholder="请输入需要转调的数字谱" maxlength="-1" bindinput="bindBeforeTextInput" />
-  </view>
-  <view class="section section-selector">
-    <view class="section">
-      <picker bindchange="bindBeforeModePickerChange" value="{{beforeMode}}" range="{{toneMap}}">
-        <view class="picker">
-          转换前：{{toneMap[beforeMode]}}
-        </view>
-      </picker>
+  <form class="index-form" bindsubmit="formSubmit">
+    <view class="section section-opern">
+      <textarea class='textarea-opern' name="beforeText" show-confirm-bar="false" placeholder="请输入需要转调的数字谱" maxlength="-1" bindinput="bindBeforeTextInput" />
     </view>
-    <view class="section">
-      <picker bindchange="bindAfterModePickerChange" value="{{afterMode}}" range="{{toneMap}}">
-        <view class="picker">
-          转换后：{{toneMap[afterMode]}}
-        </view>
-      </picker>
+    <view class="section section-selector">
+      <view class="section">
+        <picker bindchange="bindBeforeModePickerChange" name="beforeMode" value="{{beforeMode}}" range="{{toneMap}}">
+          <view class="picker">
+            转换前：{{toneMap[beforeMode]}}
+          </view>
+        </picker>
+      </view>
+      <view class="section">
+        <picker bindchange="bindAfterModePickerChange" name="afterMode" value="{{afterMode}}" range="{{toneMap}}">
+          <view class="picker">
+            转换后：{{toneMap[afterMode]}}
+          </view>
+        </picker>
+      </view>
     </view>
-  </view>
-  <view class='section section-button'>
-    <button type="primary" size="default" bindtap="convert">转换</button>
-  </view>
-  <view class="section section-opern">
+    <view class='section section-button'>
+      <button type="primary" size="default" formType="submit">转换</button>
+    </view>
+  </form>
+  <!-- <view class="section section-opern">
     <textarea class='textarea-opern' placeholder="转调结果（长按可以复制）" disabled='true' value="{{afterText}}" maxlength="-1" bindlongpress="bindAfterTextLongpress" />
-  </view>
+  </view> -->
 </view>

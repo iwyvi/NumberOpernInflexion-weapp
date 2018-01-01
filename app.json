@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/list/list",
+    "pages/result/result",
     "pages/detail/detail"
   ],
   "window": {
@@ -10,5 +10,22 @@
     "navigationBarBackgroundColor": "#ff5c4f",
     "navigationBarTitleText": "数字谱转调器",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#ff5c4f",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/img/white.png",
+        "selectedIconPath": "assets/img/color.png",
+        "text": "转调"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "iconPath": "assets/img/barrage.png",
+        "selectedIconPath": "assets/img/barrage_fill.png",
+        "text": "曲谱"
+      }
+    ]
   }
 }

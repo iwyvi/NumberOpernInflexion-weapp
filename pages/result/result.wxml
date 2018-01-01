@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="section section-opern">
+    <textarea class='textarea-opern' placeholder="转调结果" disabled='true' value="{{result}}" maxlength="-1" />
+  </view>
+  <view class='section section-button'>
+    <button type="primary" size="default" bindtap="copy">复制</button>
+    <!-- <button type="primary" size="default" bindtap="share">分享</button> -->
+    <!-- <button type="primary" size="default" bindtap="save">保存到曲谱列表</button> -->
+  </view>
+</view>
