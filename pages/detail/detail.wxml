@@ -1,0 +1,16 @@
+<view class="container">
+  <form class="detail-form" bindsubmit="formSubmit">
+    <view class='section section-title section-card'>
+       <input placeholder="曲谱标题" name="opernTitle" />
+    </view>
+    <view class="section section-opern section-card">
+      <textarea class='textarea-opern' name="opernText" show-confirm-bar="false" auto-height="true" placeholder="曲谱内容" maxlength="-1" />
+    </view>
+    <view class='section-updateTime'>
+      <text>上次修改时间：{{updateTime}}</text>
+    </view>
+    <view class='section section-button'>
+      <button type="primary" size="default" formType="submit">保存</button>
+    </view>
+  </form>
+</view>

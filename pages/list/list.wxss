@@ -1,0 +1,32 @@
+.section-button {
+  margin: auto;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  width: 80%;
+}
+
+.section-card {
+  margin-top: 30rpx;
+  width: 100%;
+  padding: 25rpx;
+  background-color: #fff;
+}
+
+.card-title {
+  font-size: 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card-updateTime {
+  margin-top: 5rpx;
+  font-size: 0.7rem;
+  color: #707070;
+}
+
+.section-hint {
+  margin-top: 30rpx;
+  font-size: 0.8rem;
+  color: #707070; 
+}

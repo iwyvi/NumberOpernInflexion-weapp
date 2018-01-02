@@ -20,22 +20,18 @@ Page({
       afterMode: e.detail.value
     })
   },
-  convert(e) {
+  convert() {
     let transmode = this.data.beforeMode - this.data.afterMode;
     let rawText = this.data.beforeText;
-    console.log(rawText)
     if (!rawText) {
       wx.showToast({
         title: '请输入数字谱',
-        icon: 'failure',
+        image: '/assets/img/prompt_fill.png',
         duration: 2000
       })
       return;
     } else {
       let finalText = inflexion.change(rawText, transmode);
-      // this.setData({
-      //   afterText: finalText
-      // })
       wx.setStorageSync("lastOpern", finalText);
       wx.navigateTo({
         url: "/pages/result/result"

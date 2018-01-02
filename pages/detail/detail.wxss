@@ -1,0 +1,28 @@
+.detail-form{
+  width: 100%;
+}
+
+.section-title {
+  
+}
+
+.section-title input {
+  padding: 25rpx;
+}
+
+.section-opern {
+  margin-top: 35rpx;
+  margin-bottom: 20rpx;
+  padding: 25rpx;
+}
+
+.textarea-opern {
+  width: 100%;
+  min-height: 750rpx;
+}
+
+.section-updateTime {
+  margin-bottom: 20rpx;
+  font-size: 0.7rem;
+  color: #707070; 
+}

@@ -1,10 +1,16 @@
 <view class="container">
-  <view class="section">
-    <view class="section__title">普通选择器</view>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-      <view class="picker">
-        当前选择：{{array[index]}}
-      </view>
-    </picker>
+  <view class='section section-button'>
+    <button type="primary" size="default" bindtap='newOpern'>新建曲谱</button>
+  </view>
+  <view class='section-hint' wx:if="{{opernList.length==0}}">
+    <text>还没有保存的曲谱呢~</text>
+  </view>
+  <view wx:for="{{opernList}}" wx:key="opernId" class="section section-card" bindtap='openOpern' bindlongpress='deleteOpern'>
+    <view class='card-title'>
+      <text>{{item.opernTitle}}</text>
+    </view>
+    <view class='card-updateTime'>
+      <text>{{item.updateTime}}</text>
+    </view>
   </view>
 </view>

@@ -21,8 +21,21 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "曲谱列表",
+					"pathName": "pages/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新建曲谱",
+					"pathName": "pages/detail/detail",
+					"query": ""
+				}
+			]
 		}
 	}
 }

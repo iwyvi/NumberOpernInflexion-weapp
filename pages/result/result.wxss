@@ -5,10 +5,7 @@
 .textarea-opern {
   width: 100%;
   min-height: 750rpx;
-  border-radius: 10rpx;
-  box-sizing: border-box;
   padding: 20rpx;
-  box-shadow: 0 4rpx 10rpx 0 rgba(0, 0, 0, 0.1), 0 6rpx 20rpx 0 rgba(0, 0, 0, 0.19);
   background-color: #ffffff;
 }
 
@@ -21,5 +18,4 @@
   margin-top: 30rpx;
   margin-bottom: 30rpx;
   width: 100%;
-  box-shadow: 0 2rpx 5rpx 0 rgba(0, 0, 0, 0.1), 0 3rpx 10rpx 0 rgba(0, 0, 0, 0.19);
 }
