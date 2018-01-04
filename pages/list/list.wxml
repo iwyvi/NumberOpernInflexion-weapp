@@ -5,7 +5,7 @@
   <view class='section-hint' wx:if="{{opernList.length==0}}">
     <text>还没有保存的曲谱呢~</text>
   </view>
-  <view wx:for="{{opernList}}" wx:key="opernId" class="section section-card" bindtap='openOpern' bindlongpress='deleteOpern'>
+  <view wx:for="{{opernList}}" wx:key="opernId" class="section section-card" bindtap='openOpern' bindlongpress='deleteOpern' data-id="{{item.opernId}}">
     <view class='card-title'>
       <text>{{item.opernTitle}}</text>
     </view>

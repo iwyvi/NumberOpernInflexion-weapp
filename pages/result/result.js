@@ -27,6 +27,8 @@ Page({
   },
 
   save(e) {
-    
+    wx.navigateTo({
+      url: "/pages/detail/detail?saveFromResult=true"
+    })
   }
 })
