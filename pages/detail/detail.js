@@ -20,6 +20,7 @@ Page({
         opernText: result
       })
     }
+    this.checkFirstOpen();
   },
 
   getCurrentTime(value) {
@@ -67,6 +68,20 @@ Page({
         opernText: opernDetail.data.opernText,
         updateTime: time.getCurrentTime(opernDetail.data.updateTime),
       })
+    }
+  },
+  checkFirstOpen() {
+    let isFirstOpen = true;
+    let opernId = wx.getStorageSync('opernId');
+    if(opernId) {
+      isFirstOpen = false;
+    }
+    if(isFirstOpen) {
+      wx.showModal({
+        title: '提示',
+        content: '本小程序没有提供网络服务，曲谱内容仅存在本地，请及时备份'
+      })
+
     }
   }
 })

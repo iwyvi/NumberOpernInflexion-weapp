@@ -27,12 +27,14 @@ Page({
     })
   },
   deleteOpern(e) {
+    let targetId = e.currentTarget.dataset.id;
+    let targetDetail = app.getOpernDetail(targetId).data;
     wx.showModal({
       title: '提示',
-      content: '删除xxx',
+      content: '删除' + (targetDetail.opernTitle || '') + '?',
       success: (res) => {
         if (res.confirm) {
-          let opernId = e.currentTarget.dataset.id;
+          let opernId = targetId;
           app.deleteOpern(opernId);
           this.loadOpernList();
         }
