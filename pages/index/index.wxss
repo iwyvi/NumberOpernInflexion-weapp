@@ -5,12 +5,12 @@
 .section-opern {
   width: 100%;
   padding: 20rpx;
+  background-color: #fff;
 }
 
 .textarea-opern {
   width: 100%;
   min-height: 750rpx;
-  background-color: #fff;
 }
 
 .section-selector {
@@ -28,6 +28,15 @@
 .section-button {
   margin: auto;
   margin-top: 30rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 20rpx;
   width: 80%;
+}
+
+.section-hint {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #3d5dc5;
+}
+.section-hint navigator {
+  display: inline;
 }

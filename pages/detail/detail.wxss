@@ -3,17 +3,15 @@
 }
 
 .section-title {
-  
-}
-
-.section-title input {
   padding: 25rpx;
+  background-color: #fff;
 }
 
 .section-opern {
   margin-top: 35rpx;
   margin-bottom: 20rpx;
   padding: 25rpx;
+  background-color: #fff;
 }
 
 .textarea-opern {

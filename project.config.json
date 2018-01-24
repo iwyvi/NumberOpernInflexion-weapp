@@ -20,8 +20,12 @@
 			"current": -1,
 			"list": []
 		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -33,6 +37,12 @@
 					"id": -1,
 					"name": "新建曲谱",
 					"pathName": "pages/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "帮助",
+					"pathName": "pages/help/help",
 					"query": ""
 				}
 			]

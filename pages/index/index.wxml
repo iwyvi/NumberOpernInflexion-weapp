@@ -23,6 +23,9 @@
     <view class='section section-button'>
       <button type="primary" size="default" formType="submit">转换</button>
     </view>
+    <view class='section section-hint'>
+      <navigator url="/pages/help/help">什么是数字谱？</navigator>
+    </view>
   </form>
   <!-- <view class="section section-opern">
     <textarea class='textarea-opern' placeholder="转调结果（长按可以复制）" disabled='true' value="{{afterText}}" maxlength="-1" bindlongpress="bindAfterTextLongpress" />

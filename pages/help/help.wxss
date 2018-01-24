@@ -1,0 +1,27 @@
+
+.h1 {
+  font-size: 1.6rem;
+}
+
+.section-content {
+  width: 95%;
+}
+
+.section-body .h2 {
+  color: #ff5c4f;
+  font-size: 1.1rem;
+  display: block;
+  border-bottom: 1rpx solid #ff5c4f;
+  padding-bottom: 5rpx;
+  margin-bottom: 15rpx;
+  margin-top: 30rpx;
+}
+.section-body .section-p text{
+  display: block;
+  margin-bottom: 15rpx;
+  font-size: 0.9rem;
+}
+
+.section-body .section-indent text {
+    text-indent: 2em;
+}
