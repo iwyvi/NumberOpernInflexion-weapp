@@ -31,9 +31,9 @@ var tempHeight = 0;
  * @param {int} mode 调式差
  */
 function Change(text, mode) {
-  if (mode == 0) {
-    return text;
-  }
+  // if (mode == 0) {
+  //   return text;
+  // }
   //按行分割
   var line = text.split("\n");
   var result = "";
@@ -204,7 +204,7 @@ function charChange(charIndex, mode) {
         }
       };
       break;
-    //default是处理空格什么的
+      //default是处理空格什么的
     default:
       return bracketMatch() + charIndex;
   }
