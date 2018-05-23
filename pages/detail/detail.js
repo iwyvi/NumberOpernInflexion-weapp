@@ -14,10 +14,15 @@ Page({
   onLoad: function (options) {
     if (options && options.opernId) {
       this.loadOpernDetail(options.opernId);
-    }else if(options && options.saveFromResult) {
+    } else if (options && options.saveFromResult) {
       let result = wx.getStorageSync("lastOpern") || "";
       this.setData({
         opernText: result
+      })
+    } else if (options && options.saveFromShare) {
+      this.setData({
+        opernTitle: decodeURIComponent(options.title) || '',
+        opernText: decodeURIComponent(options.text) || ''
       })
     }
     this.checkFirstOpen();
@@ -73,15 +78,21 @@ Page({
   checkFirstOpen() {
     let isFirstOpen = true;
     let opernId = wx.getStorageSync('opernId');
-    if(opernId) {
+    if (opernId) {
       isFirstOpen = false;
     }
-    if(isFirstOpen) {
+    if (isFirstOpen) {
       wx.showModal({
         title: '提示',
         content: '本小程序没有提供网络服务，曲谱内容仅存在本地，请及时备份'
       })
 
     }
-  }
+  },
+  onShareAppMessage(options) {
+    return {
+      title: '曲谱分享',
+      path: `pages/detail/detail?saveFromShare=true&title=${encodeURIComponent(this.data.opernTitle)}&text=${encodeURIComponent(this.data.opernText)}`
+    }
+  },
 })

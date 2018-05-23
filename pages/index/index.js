@@ -45,7 +45,9 @@ Page({
     })
     this.convert();
   },
-  onLoad() {
-
-  }
+  onShareAppMessage(options) {
+    return {
+      imageUrl: '/assets/img/share.jpg'
+    }
+  },
 })

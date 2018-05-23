@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.7.2",
+	"libVersion": "2.0.4",
 	"appid": "wx5105622533d775d9",
 	"projectname": "%E6%95%B0%E5%AD%97%E8%B0%B1%E8%BD%AC%E8%B0%83%E5%99%A8",
 	"condition": {
@@ -17,6 +17,10 @@
 			"list": []
 		},
 		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
 			"current": -1,
 			"list": []
 		},
@@ -44,6 +48,13 @@
 					"name": "帮助",
 					"pathName": "pages/help/help",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "结果",
+					"pathName": "pages/result/result",
+					"query": "",
+					"scene": "1007"
 				}
 			]
 		}
