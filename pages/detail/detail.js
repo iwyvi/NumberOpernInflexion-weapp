@@ -14,18 +14,22 @@ Page({
   onLoad: function (options) {
     if (options && options.opernId) {
       this.loadOpernDetail(options.opernId);
+      this.checkFirstOpen();
     } else if (options && options.saveFromResult) {
       let result = wx.getStorageSync("lastOpern") || "";
       this.setData({
         opernText: result
       })
     } else if (options && options.saveFromShare) {
-      this.setData({
-        opernTitle: decodeURIComponent(options.title) || '',
-        opernText: decodeURIComponent(options.text) || ''
-      })
+        wx.showModal({
+            title: '提示',
+            content: '由于安全原因，本小程序已不再支持曲谱分享功能'
+        });
+    //   this.setData({
+    //     opernTitle: decodeURIComponent(options.title) || '',
+    //     opernText: decodeURIComponent(options.text) || ''
+    //   })
     }
-    this.checkFirstOpen();
   },
 
   getCurrentTime(value) {
@@ -76,23 +80,15 @@ Page({
     }
   },
   checkFirstOpen() {
-    let isFirstOpen = true;
-    let opernId = wx.getStorageSync('opernId');
-    if (opernId) {
-      isFirstOpen = false;
-    }
-    if (isFirstOpen) {
-      wx.showModal({
-        title: '提示',
-        content: '本小程序没有提供网络服务，曲谱内容仅存在本地，请及时备份'
-      })
-
-    }
+    wx.showModal({
+    title: '提示',
+    content: '本小程序没有提供网络服务，曲谱内容仅存在本地。由于安全原因，后续更新会移除曲谱存储功能，请及时备份。'
+    })
   },
-  onShareAppMessage(options) {
-    return {
-      title: '曲谱分享',
-      path: `pages/detail/detail?saveFromShare=true&title=${encodeURIComponent(this.data.opernTitle)}&text=${encodeURIComponent(this.data.opernText)}`
-    }
-  },
+//   onShareAppMessage(options) {
+//     return {
+//       title: '曲谱分享',
+//       path: `pages/detail/detail?saveFromShare=true&title=${encodeURIComponent(this.data.opernTitle)}&text=${encodeURIComponent(this.data.opernText)}`
+//     }
+//   },
 })

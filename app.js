@@ -58,7 +58,6 @@ App({
   newOpern(opernData) {
     let tempId = Date.now();
     this.updateOpern(tempId, opernData);
-    wx.setStorageSync('opernId', tempId);
     return tempId;
   },
 

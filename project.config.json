@@ -1,62 +1,81 @@
 {
-	"description": "项目配置文件。",
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
-	"appid": "wx5105622533d775d9",
-	"projectname": "%E6%95%B0%E5%AD%97%E8%B0%B1%E8%BD%AC%E8%B0%83%E5%99%A8",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "曲谱列表",
-					"pathName": "pages/list/list",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "新建曲谱",
-					"pathName": "pages/detail/detail",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "帮助",
-					"pathName": "pages/help/help",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "结果",
-					"pathName": "pages/result/result",
-					"query": "",
-					"scene": "1007"
-				}
-			]
-		}
-	}
+    "description": "项目配置文件。",
+    "setting": {
+        "urlCheck": true,
+        "es6": true,
+        "enhance": true,
+        "postcss": true,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "newFeature": true,
+        "coverView": true,
+        "nodeModules": false,
+        "autoAudits": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false,
+        "uglifyFileName": false,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "compileHotReLoad": false,
+        "lazyloadPlaceholderEnable": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "enableEngineNative": false,
+        "useIsolateContext": true,
+        "userConfirmedBundleSwitch": false,
+        "packNpmManually": false,
+        "packNpmRelationList": [],
+        "minifyWXSS": true,
+        "disableUseStrict": false,
+        "showES6CompileOption": false,
+        "useCompilerPlugins": false,
+        "minifyWXML": true,
+        "condition": false
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.30.2",
+    "appid": "wx5105622533d775d9",
+    "projectname": "%E6%95%B0%E5%AD%97%E8%B0%B1%E8%BD%AC%E8%B0%83%E5%99%A8",
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "曲谱列表",
+                    "pathName": "pages/list/list",
+                    "query": ""
+                },
+                {
+                    "name": "新建曲谱",
+                    "pathName": "pages/detail/detail",
+                    "query": ""
+                },
+                {
+                    "name": "帮助",
+                    "pathName": "pages/help/help",
+                    "query": ""
+                },
+                {
+                    "name": "结果",
+                    "pathName": "pages/result/result",
+                    "query": "",
+                    "scene": "1007"
+                }
+            ]
+        }
+    },
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    }
 }

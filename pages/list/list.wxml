@@ -2,8 +2,9 @@
   <view class='section section-button'>
     <button type="primary" size="default" bindtap='newOpern'>新建曲谱</button>
   </view>
-  <view class='section-hint' wx:if="{{opernList.length==0}}">
-    <text>还没有保存的曲谱呢~</text>
+  <view class='section-hint'>
+    <text wx:if="{{opernList.length==0}}">还没有保存的曲谱呢~</text>
+    <text wx:else>由于安全原因，小程序即将移除曲谱存储功能，请及时备份~</text>
   </view>
   <view wx:for="{{opernList}}" wx:key="opernId" class="section section-card" bindtap='openOpern' bindlongpress='deleteOpern' data-id="{{item.opernId}}">
     <view class='card-title'>

@@ -17,8 +17,12 @@ Page({
     })
   },
   newOpern(e) {
-    wx.navigateTo({
-      url: "/pages/detail/detail"
+    // wx.navigateTo({
+    //   url: "/pages/detail/detail"
+    // })
+    wx.showModal({
+        title: '提示',
+        content: '由于安全原因，小程序内不再支持曲谱存储，请使用其他工具进行保存'
     })
   },
   openOpern(e) {
